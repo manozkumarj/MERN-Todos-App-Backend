@@ -1,0 +1,102 @@
+======================================================================================================================
+******************************** Project Directory Structure *********************************************************
+project-root
+|-- server.ts
+|   |
+|   |-- config
+|   |   |-- db.ts
+|   |
+|   |-- routes
+|   |   |-- userRoutes.ts
+|   |
+|   |-- middlewares
+|   |   |-- validationsMiddleware.ts
+|   |
+|   |-- schemas
+|   |   |-- userSchemas.ts
+|   |
+|   |-- controllers
+|   |   |-- registrationController.ts
+|   |
+|   |-- modals
+|   |   |-- user.model.ts
+|   |
+|   |-- utils
+|   |   |-- constants.ts
+|   |   |-- helpers.ts
+|   |
+|-- package.json
+|-- tsconfig.json
+|-- ...
+======================================================================================================================
+************************************* Collections & Schemas **********************************************************
+Users Collection:
+    username
+    fullName
+    email
+    password
+    gender ==> male, female, other
+    profilePhoto
+    coverPhoto
+    isEmailVerified ==> false,true
+    accountStatus ==> pending,active,inActive,deleted
+    resetpasswordtoken: String,
+    resetpasswordtokenexpiry: Date,
+    createdAt
+    updatedAt
+
+
+Todos Collection:
+    userId
+    title
+    isCompleted ==> false,true
+    todoStatus ==> active,inActive,deleted
+    createdAt
+    updatedAt
+
+
+Sessions Collection:
+    userId
+    userAgent
+    refreshToken
+    createdAt
+
+
+
+
+======================================================================================================================
+**************************** Functionalities to be implemented *******************************************************
+* Implement email sending service when and where required
+* Upload profile and cover photos
+* Download all Users list as a CSV file
+* Download all Todos as a CSV file
+* Bulk import of Todos from a CSV file
+* express rate limit
+* Limit input data size
+* 
+
+======================================================================================================================
+************************************* Useful links *******************************************************************
+*** https://dev.to/cyberwolves/jwt-authentication-with-access-tokens-refresh-tokens-in-node-js-5aa9
+* https://mui.com/material-ui/react-dialog/
+* https://stackoverflow.com/questions/57329278/how-to-handle-outside-click-on-dialog-modal
+* https://www.material-tailwind.com/docs/react/installation
+* https://v4.mui.com/components/switches/
+* 
+
+
+======================================================================================================================
+********************************** Test user credentials *************************************************************
+test7@gmail.com
+Test7@gmail
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2ZiOTI4ZDFiNmMzNmI4NDNkYzM0OTUiLCJpYXQiOjE3NDQ2NDM4NjYsImV4cCI6MTc0NDY0NDcwNn0.6l6Sy0GmMXR0789Vj6pnXyqKA_1CH7NHygTcNNnjrYQ
+
+
+
+======================================================================================================================
+********************************** Production related points *********************************************************
+* Change the flow while creating a cookie
+res.cookie('username', 'chetan_patil', { maxAge: 900000, domain: '.medium.com', secure: true });
+
+* 
